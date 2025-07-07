@@ -12,8 +12,8 @@ published: true
 
 Hey friends
 
-```ts
+```typescript
 function greet(name: string) {
-	console.log(`Hey ${name}!`);
+    console.log(`Hey ${name}!`);
 }
 ```

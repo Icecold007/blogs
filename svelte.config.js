@@ -1,30 +1,42 @@
-import { escapeSvelte, mdsvex } from 'mdsvex';
-import adapter from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { mdsvex } from 'mdsvex';
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolink from 'rehype-autolink-headings';
+import rehypePrettyCode from 'rehype-pretty-code';
 
-import { getHighlighter } from 'shiki';
-
-/** @type {import('mdsvex').MdsvexOptions} */
-const mdsvexOptions = {
-	extensions: ['.md'],
-	highlight: {
-		highlighter: async (code, lang = 'text') => {
-			const highlighter = await Shiki.getHighlighter({
-				themes: ['poimandres'],
-				langs: ['javascript', 'typescript']
-			});
-			await highlighter.loadLanguage('javascript', 'typescript');
-			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'poimandres' }));
-			return `{@html \`${html}\` }`;
-		}
-	}
-};
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.md'],
-	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
-	kit: {
-		adapter: adapter()
-	}
+    kit: {
+        adapter: adapter()
+    },
+    extensions: ['.svelte', '.md'],
+    preprocess: [
+        vitePreprocess(),
+        mdsvex({
+            extensions: ['.md'],
+            remarkPlugins: [remarkGfm],
+            rehypePlugins: [
+                rehypeSlug,
+                [rehypeAutolink, { behavior: 'wrap' }],
+                [rehypePrettyCode, {
+                    theme: 'github-dark',
+                    onVisitLine(node) {
+                        if (node.children.length === 0) {
+                            node.children = [{ type: 'text', value: ' ' }];
+                        }
+                    },
+                    onVisitHighlightedLine(node) {
+                        node.properties.className.push('highlighted');
+                    },
+                    onVisitHighlightedWord(node) {
+                        node.properties.className = ['word'];
+                    },
+                }],
+            ]
+        })
+    ]
 };
 
 export default config;

@@ -13,9 +13,9 @@ published: true
 
 ## Crafting a Full-Stack Treasure Hunt with SvelteKit and Supabase
 
-After a long slumber, I was eager to build something truly interactive—a project that involved state, security, and a dynamic user experience. I was given the opportunity to build a digital Treasure Hunt application by a student forum in my university.This led me to create a digital Treasure Hunt application.
+After a long slumber, I was eager to build something truly interactive, a project that involved state, security and a dynamic user experience. I was given the opportunity to build a digital Treasure Hunt application by a student forum in my university.This led me to create a digital Treasure Hunt application.
 
-**The concept was simple:** players receive a clue, solve it to find a location, and enter a code to get the next clue. The challenge was building a robust system to manage this game loop securely. That’s when I turned to the powerful duo of **SvelteKit** and **Supabase**. SvelteKit provides a seamless full-stack framework, while Supabase offers a simple yet powerful database backend.
+**The concept was simple:** players receive a clue, solve it to find a location and enter a code to get the next clue. The challenge was building a robust system to manage this game loop securely. That’s when I turned to the powerful duo of **SvelteKit** and **Supabase**. SvelteKit provides a seamless full-stack framework, while Supabase offers a simple yet powerful database backend.
 
 ---
 

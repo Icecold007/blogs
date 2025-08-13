@@ -24,13 +24,20 @@
 		padding-block: var(--size-7);
 	}
 
-	/* .links {
-		margin-block: var(--size-7);
-	} */
-
 	a {
 		color: inherit;
 		text-decoration: none;
+	}
+
+	@media (max-width: 767px) {
+		nav {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: var(--size-4);
+			text-align: center;
+		}
 	}
 
 	@media (min-width: 768px) {

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as config from '$lib/config';
+	import Toggle from './toggle.svelte';
 </script>
 
 <nav>
@@ -7,18 +8,15 @@
 		<b>{config.title}</b>
 	</a>
 
-	<ul class="links">
+	<!-- <ul class="links">
 		<li>
 			<a href="/about">About</a>
 		</li>
 		<li>
-			<a href="/blog">Contact</a>
+			<a href="/contact" rel="prefetch">Contact</a>
 		</li>
-		<li>
-			<a href="/rss.xml" target="_blank">RSS</a>
-		</li>
-	</ul>
-	<button>Toggle</button>
+	</ul> -->
+	<Toggle />
 </nav>
 
 <style>
@@ -26,9 +24,9 @@
 		padding-block: var(--size-7);
 	}
 
-	.links {
+	/* .links {
 		margin-block: var(--size-7);
-	}
+	} */
 
 	a {
 		color: inherit;
@@ -40,10 +38,10 @@
 			display: flex;
 			justify-content: space-between;
 		}
-		.links {
+		/* .links {
 			display: flex;
 			gap: var(--size-4);
 			margin-block: 0;
-		}
+		} */
 	}
 </style>

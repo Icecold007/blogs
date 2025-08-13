@@ -176,3 +176,10 @@ li {
 	border-radius: 8px;
 	tab-size: 2;
 }
+
+/* Make bold text more visible on dark backgrounds */
+strong,
+b {
+	color: #45b2a9;
+	font-weight: bold;
+}

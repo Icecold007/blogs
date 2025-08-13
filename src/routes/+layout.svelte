@@ -6,13 +6,18 @@
 	import 'open-props/normalize';
 	import 'open-props/buttons';
 
+	import PageTransition from './transition.svelte';
+	import { page } from '$app/stores';
+	import { get } from 'svelte/store';
+
 	let { children } = $props();
+	const url = get(page).url;
 </script>
 
 <div class="layout">
 	<Header />
 	<main>
-		{@render children()}
+		<PageTransition url={url.pathname}>{@render children()}</PageTransition>
 	</main>
 	<Footer />
 </div>

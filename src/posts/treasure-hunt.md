@@ -80,8 +80,10 @@ Here’s a look at the Svelte component:
 ### The key features here are:
 
 `use:enhance`: This is SvelteKit’s tool for progressive enhancement. It takes a standard HTML form and gives it modern, app-like behavior, preventing a full-page reload on submission.
+
 `export let form`: This prop receives the data returned from our backend action.
-`Conditional Blocks`: The UI dynamically changes based on the contents of the form object. If form.success is true, it shows the next clue. Otherwise, it displays an error, and the form remains visible.
+
+`Conditional Blocks`: The UI dynamically changes based on the contents of the form object. If `form.success` is true, it shows the next clue. Otherwise, it displays an error, and the form remains visible.
 
 ---
 

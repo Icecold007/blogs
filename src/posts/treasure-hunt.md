@@ -25,7 +25,7 @@ Before writing any code, I needed to establish the rules. How could I ensure pla
 
 1. **Team Code**: A unique code for each team. This is the primary identifier for tracking a team's progress through the hunt.
 2. **Location Code**: The "answer" to a given clue. This code confirms that a team has successfully solved the puzzle.
-3. **Clue Code**: The secret ingredient. This code is given _with_ a new clue and must be submitted with the _next_ answer. This brilliantly ensures that a team can't skip ahead, as they need the code from Clue A to unlock Clue B.
+3. **Clue Code**: The secret ingredient. This code is given with a _new clue_ and must be submitted with the _next answer_. This brilliantly ensures that a team can't skip ahead, as they need the code from Clue A to unlock Clue B.
 
 With this logic, every submission would require a valid combination of who you are (`Team Code`), where you are (`Location Code`), and where you just came from (`Clue Code`).
 

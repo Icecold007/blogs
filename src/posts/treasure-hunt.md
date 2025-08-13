@@ -1,6 +1,6 @@
 ---
 title: Treasure-Hunt
-description: first post
+description: Full-Stack Digital Treasure Hunt with SvelteKit and Supabase
 date: '2025-08-13'
 categories:
   - Overview
